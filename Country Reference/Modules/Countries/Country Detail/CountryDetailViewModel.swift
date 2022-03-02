@@ -92,14 +92,15 @@ extension CountryDetailViewModel: UITableViewDataSource {
         else { return 0 }
 
         switch section {
-        case .flag:
+        case .flag, .map:
             return 1
+
         case .currencies:
             return country.currencies.count
+
         case .languages:
             return country.languages.count
-        case .map:
-            return 1
+
         case .neighbors:
             return country.neighborCountryCodes.count
         }
