@@ -22,14 +22,14 @@ class CountryMapCell: UITableViewCell {
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
 
-        uiSetup()
-        combineSetup()
+        setupUI()
+        setupCombine()
     }
 }
 
 // MARK: - UI EXT
 private extension CountryMapCell {
-    func uiSetup() {
+    func setupUI() {
         _ = mapView
     }
 
@@ -49,7 +49,7 @@ private extension CountryMapCell {
 
 // MARK: - Combine EXT
 private extension CountryMapCell {
-    func combineSetup() {
+    func setupCombine() {
         coordinateSubsciption = $geographicDetails
             .receive(on: DispatchQueue.main)
             .compactMap { $0 }

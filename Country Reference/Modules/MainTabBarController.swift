@@ -34,13 +34,13 @@ extension MainTabBarController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        self.uiSetup()
+        self.setupUI()
     }
 }
 
 // MARK: - UI EXT
 private extension MainTabBarController {
-    func uiSetup() {
+    func setupUI() {
         self.view.backgroundColor = .systemBackground
 
         self.viewControllers = [

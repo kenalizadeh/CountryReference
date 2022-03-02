@@ -23,8 +23,8 @@ extension CountrySearchViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        uiSetup()
-        combineSetup()
+        setupUI()
+        setupCombine()
     }
 
     override func viewWillAppear(_ animated: Bool) {
@@ -42,7 +42,7 @@ extension CountrySearchViewController {
 
 // MARK: - UI EXT
 private extension CountrySearchViewController {
-    func uiSetup() {
+    func setupUI() {
         self.view.backgroundColor = .systemBackground
 
         _ = self.tableView
@@ -79,7 +79,7 @@ private extension CountrySearchViewController {
 
 // MARK: - Combine EXT
 private extension CountrySearchViewController {
-    func combineSetup() {
+    func setupCombine() {
         stateSubscription = viewModel
             .$state
             .receive(on: DispatchQueue.main)

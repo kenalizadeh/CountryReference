@@ -24,13 +24,13 @@ class CountrySearchViewModel: NSObject {
     override init() {
         super.init()
 
-        combineSetup()
+        setupCombine()
     }
 }
 
 // MARK: - Combine EXT
 private extension CountrySearchViewModel {
-    func combineSetup() {
+    func setupCombine() {
         service
             .$responseDTO
             .replaceNil(with: [])

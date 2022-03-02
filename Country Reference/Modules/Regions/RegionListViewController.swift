@@ -21,8 +21,8 @@ extension RegionListViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        self.uiSetup()
-        self.combineSetup()
+        self.setupUI()
+        self.setupCombine()
     }
 
     override func viewWillAppear(_ animated: Bool) {
@@ -40,7 +40,7 @@ extension RegionListViewController {
 
 // MARK: - UI EXT
 private extension RegionListViewController {
-    func uiSetup() {
+    func setupUI() {
         _ = self.tableView
     }
 
@@ -63,7 +63,7 @@ private extension RegionListViewController {
 
 // MARK: - Combine EXT
 private extension RegionListViewController {
-    func combineSetup() {
+    func setupCombine() {
         stateSubscription = viewModel
             .$state
             .receive(on: DispatchQueue.main)

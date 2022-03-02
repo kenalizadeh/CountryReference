@@ -32,8 +32,8 @@ extension CountryListViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        uiSetup()
-        combineSetup()
+        setupUI()
+        setupCombine()
 
         viewModel.load()
     }
@@ -41,7 +41,7 @@ extension CountryListViewController {
 
 // MARK: - UI EXT
 private extension CountryListViewController {
-    func uiSetup() {
+    func setupUI() {
         self.view.backgroundColor = .systemBackground
 
         _ = self.tableView
@@ -66,7 +66,7 @@ private extension CountryListViewController {
 
 // MARK: - Combine EXT
 private extension CountryListViewController {
-    func combineSetup() {
+    func setupCombine() {
         stateSubscription = viewModel
             .$state
             .receive(on: DispatchQueue.main)

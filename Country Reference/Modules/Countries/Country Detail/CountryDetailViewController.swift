@@ -28,8 +28,8 @@ extension CountryDetailViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        uiSetup()
-        combineSetup()
+        setupUI()
+        setupCombine()
 
         viewModel.load()
     }
@@ -37,7 +37,7 @@ extension CountryDetailViewController {
 
 // MARK: - UI EXT
 private extension CountryDetailViewController {
-    func uiSetup() {
+    func setupUI() {
         _ = self.tableView
     }
 
@@ -61,7 +61,7 @@ private extension CountryDetailViewController {
 
 // MARK: - Combine EXT
 private extension CountryDetailViewController {
-    func combineSetup() {
+    func setupCombine() {
         stateSubscription = viewModel
             .$state
             .receive(on: DispatchQueue.main)

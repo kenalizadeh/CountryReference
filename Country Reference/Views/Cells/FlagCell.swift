@@ -21,14 +21,14 @@ class FlagCell: UITableViewCell {
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
 
-        uiSetup()
-        combineSetup()
+        setupUI()
+        setupCombine()
     }
 }
 
 // MARK: - UI EXT
 private extension FlagCell {
-    func uiSetup() {
+    func setupUI() {
         _ = flagImageView
     }
 
@@ -48,7 +48,7 @@ private extension FlagCell {
 
 // MARK: - Combine EXT
 private extension FlagCell {
-    func combineSetup() {
+    func setupCombine() {
         $imageURLString
             .compactMap { URL(string: $0) }
             .sink { [weak self] url in

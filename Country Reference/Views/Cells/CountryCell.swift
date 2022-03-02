@@ -33,8 +33,8 @@ class CountryCell: UITableViewCell {
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
 
-        uiSetup()
-        combineSetup()
+        setupUI()
+        setupCombine()
 
         self.selectionStyle = .blue
     }
@@ -42,7 +42,7 @@ class CountryCell: UITableViewCell {
 
 // MARK: - UI EXT
 private extension CountryCell {
-    func uiSetup() {
+    func setupUI() {
         _ = labelStackView
 
         nameLabel.text = ""
@@ -87,7 +87,7 @@ private extension CountryCell {
 
 // MARK: - Combine EXT
 private extension CountryCell {
-    func combineSetup() {
+    func setupCombine() {
         $name
             .receive(on: DispatchQueue.main)
             .assign(to: \.text!, on: nameLabel)
